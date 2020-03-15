@@ -1,0 +1,14 @@
+//Lines beginning with // are comments and are ignored.
+#Lines beginning with # are also comments.
+x,y=x,y=x^2,x=x^3
+-5,-5,25,-125
+-4,-4,16,-64
+-3,-3,9,-27
+-2,-2,4,-8
+-1,-1,1,-1
+0,0,0,0
+1,1,1,1
+2,2,4,8
+3,3,9,27
+4,4,16,64
+5,5,25,125
