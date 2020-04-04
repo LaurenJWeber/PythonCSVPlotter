@@ -66,16 +66,17 @@ def main():
                     print("Line", line_count, ": expected", num_y_columns + 1, "columns, found",
                           len(row), "- skipping row.")
                 else:
-                    x_values.append(row[0])
-                    for i in range(num_y_columns):
-                        try:
+                    try:
+                        x_values.append(float(row[0]))
+                        for i in range(num_y_columns):
                             y_values_columns[i].append(float(row[i+1]))
-                        except ValueError as val_error:
-                            print("Line ", line_count, "of CSV file is incorrectly formatted.  "
-                                  "\nEnsure data set is rectangular,",
-                                  "and y-values columns contain numeric values.",
-                                  "\nException message:", str(val_error))
-                            sys.exit(ExitStatus.failure)
+
+                    except ValueError as val_error:
+                        print("Line ", line_count, "of CSV file is incorrectly formatted.  "
+                              "\nEnsure data set is rectangular,",
+                              "and y-values columns contain numeric values.",
+                              "\nException message:", str(val_error))
+                        sys.exit(ExitStatus.failure)
 
             line_count += 1
 
